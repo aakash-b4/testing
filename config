@@ -1,0 +1,6 @@
+[default]
+[profile AK]
+aws_access_key_id = AKIAZP54AhrkeruujdiwjdwowedojwU
+aws_secret_access_key = Pp+9CtZTtDhgytioekdksjkewk$*
+output = json
+[profile Aakash_Sabpaisa]
