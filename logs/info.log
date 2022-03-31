@@ -1,0 +1,136 @@
+Executing ICICI payment request
+response >>> [('utf-8', b'\'\xf9\xb1)\xae}"4\x03\x9c\x1a\xd7tH\xe4\x8d\xb3\xbc\xed)\x06^\xb2(v\xcb\x7f\xcd\x01\xdez\x95Z\x19\xe9\xafRt{\xa5\xd52\x14\xd3\xb8\xa7WA\xc2C\xfd\x81/~\xb4_\xf4.f$\xf64\xfdI\xd2y\x82\xfb\x02\xba\xcd\xbf\x01', 1, 2, 'invalid start byte'), {}, False]
+Executing ICICI payment request
+response >>> [('BeneficiaryModel matching query does not exist.',), {}, False]
+Executing ICICI payment request
+response >>> [('BeneficiaryModel matching query does not exist.',), {}, False]
+Executing ICICI payment request
+response >>> ['full_name is not provided', {}, False]
+Executing ICICI payment request
+response >>> ['upiId is not provided', {}, False]
+Executing ICICI payment request
+response >>> ['upiId is not provided', {}, False]
+Executing ICICI payment request
+response >>> ['upiId is not provided', {}, False]
+Executing ICICI payment request
+response >>> ['amount is not provided', {}, False]
+Executing ICICI payment request
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+amount === 1
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+query orderId=ffb829eb&upiId=testo1@icici&amount=1&purpose=SALARY_DISBURSEMENT
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+query orderId=ffb829eb&upiId=testo1@icici&amount=1&purpose=SALARY_DISBURSEMENT
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+query orderId=ffb829eb&upiId=testo1@icici&amount=1&purpose=SALARY_DISBURSEMENT
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+query orderId=ffb829eb&upiId=testo1@icici&amount=1&purpose=SALARY_DISBURSEMENT
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+query orderId=ffb829eb&upiId=testo1@icici&amount=1&purpose=SALARY_DISBURSEMENT
+map {'orderId': 'ffb829eb', 'upiId': 'testo1@icici', 'amount': '1', 'purpose': 'SALARY_DISBURSEMENT'}
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+query orderId=ffb829eb&upiId=testo1@icici&amount=1&purpose=SALARY_DISBURSEMENT
+map {'orderId': 'ffb829eb', 'upiId': 'testo1@icici', 'amount': '1', 'purpose': 'SALARY_DISBURSEMENT'}
+validating upi request
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+query orderId=ffb829eb&upiId=testo1@icici&amount=1&purpose=SALARY_DISBURSEMENT
+map {'orderId': 'ffb829eb', 'upiId': 'testo1@icici', 'amount': '1', 'purpose': 'SALARY_DISBURSEMENT'}
+validating upi request
+validating upi id
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+query orderId=ffb829eb&upiId=testo1@icici&amount=1&purpose=SALARY_DISBURSEMENT
+map {'orderId': 'ffb829eb', 'upiId': 'testo1@icici', 'amount': '1', 'purpose': 'SALARY_DISBURSEMENT'}
+validating upi request
+validating upi id
+response >>> [("argument of type 'NoneType' is not iterable",), {}, False]
+Executing ICICI payment request
+query orderId=ffb829eb&upiId=testo1@icici&amount=1&purpose=SALARY_DISBURSEMENT
+map {'orderId': 'ffb829eb', 'upiId': 'testo1@icici', 'amount': '1', 'purpose': 'SALARY_DISBURSEMENT'}
+validating upi request
+validating upi id
+validating order id
+validating amount
+response >>> ['Amount should be in decimal format', {}, False]
+Executing ICICI payment request
+query orderId=2ccbef67&upiId=testo1@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '2ccbef67', 'upiId': 'testo1@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+response >>> ['Amount should be of numeric characters', {}, False]
+Executing ICICI payment request
+query orderId=2ccbef67&upiId=testo1@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '2ccbef67', 'upiId': 'testo1@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+response >>> [('BeneficiaryModel matching query does not exist.',), {}, False]
+Executing ICICI payment request
+query orderId=fa3bc17b&upiId=testo1@icici&amount=1.0&purpose=SALARY_DISBURSEMENT
+map {'orderId': 'fa3bc17b', 'upiId': 'testo1@icici', 'amount': '1.0', 'purpose': 'SALARY_DISBURSEMENT'}
+response >>> ['Amount should be of numeric characters with two decimal places', {}, False]
+Executing ICICI payment request
+query orderId=737994ed&upiId=testo1@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '737994ed', 'upiId': 'testo1@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+response >>> [('BeneficiaryModel matching query does not exist.',), {}, False]
+Executing ICICI payment request
+query orderId=8213e98c&upiId=test@paytm&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '8213e98c', 'upiId': 'test@paytm', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+response >>> [('ICICI_Beneficiary matching query does not exist.',), {}, False]
+Executing ICICI payment request
+query orderId=57da5111&upiId=anandtest@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '57da5111', 'upiId': 'anandtest@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+response >>> Not Sufficient Balance
+Executing ICICI payment request
+query orderId=57da5111&upiId=anandtest@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '57da5111', 'upiId': 'anandtest@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+response >>> Not Sufficient Balance
+Executing ICICI payment request
+query orderId=57da5111&upiId=anandtest@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '57da5111', 'upiId': 'anandtest@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+response >>> [(MaxRetryError("HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: /encryptData (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F6E386D550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"),), {}, False]
+Executing ICICI payment request
+query orderId=57da5111&upiId=anandtest@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '57da5111', 'upiId': 'anandtest@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+response >>> ['Duplicate Order id', {}, False]
+Executing ICICI payment request
+query orderId=57da5111&upiId=anandtest@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '57da5111', 'upiId': 'anandtest@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+===== ICICI UPI payment failed =====
+response >>> [(1048, "Column 'remarks' cannot be null"), {}, False]
+Executing ICICI payment request
+query orderId=57da5111&upiId=anandtest@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '57da5111', 'upiId': 'anandtest@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+response >>> ['Duplicate Order id', {}, False]
+Executing ICICI payment request
+query orderId=57da5111&upiId=anandtest@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '57da5111', 'upiId': 'anandtest@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+===== ICICI UPI payment failed =====
+response >>> [(1048, "Column 'remarks' cannot be null"), {}, False]
+Executing ICICI payment request
+query orderId=57da5111&upiId=anandtest@icici&amount=1.00&purpose=SALARY_DISBURSEMENT
+map {'orderId': '57da5111', 'upiId': 'anandtest@icici', 'amount': '1.00', 'purpose': 'SALARY_DISBURSEMENT'}
+amount === 1.00
+===== ICICI UPI payment failed =====
+===== ICICI status thread start =====
+response >>> ['Payout Done', {'orderId': '57da5111', 'amount': '1.00', 'status': 'PROCESSING', 'requestedDatetime': '2022-02-10 16:40:31'}, True]
+===== ICICI status thread waiting for 40 sec.... =====
+===== ICICI status thread continued =====
+===== Processing ICICI status for UPI =====
+status response : 
+===== ICICI status failed =====

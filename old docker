@@ -1,0 +1,38 @@
+# From Ubuntu
+
+FROM python:3.8.10
+# ENV PYTHONUNBUFFERED=1
+# RUN mkdir /code
+# WORKDIR /code
+# COPY requirements.txt /code/
+# RUN pip install -r requirements.txt
+# COPY . /code/
+
+# FROM ubuntu:20.04
+# FROM python:3.6
+
+# update packages
+RUN apt-get -qq update
+RUN apt-get install --yes apache2 apache2-dev
+RUN pip install mod_wsgi
+
+RUN mkdir /code
+WORKDIR /code
+
+COPY requirements.txt /code/
+RUN pip install -r requirements.txt
+
+# copy the actual code
+COPY . /code/
+
+
+CMD mod_wsgi-express start-server /code/project_name/wsgi.py --user www-data --group www-data
+
+# copy and install requirements first to leverage caching
+# COPY requirements.txt /code/
+# RUN pip install -r requirements.txt
+
+# # copy the actual code
+# COPY . /code/
+
+# CMD ./manage.py runserver 0.0.0.0:8000

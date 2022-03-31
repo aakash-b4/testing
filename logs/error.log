@@ -1,0 +1,606 @@
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 413, in excuteICICI
+    query = auth.AESCipher(authKey, authIV).decrypt(
+  File "E:\sabpaisa\Sabpaisa-Payout\sabpaisa\auth.py", line 28, in decrypt
+    return self._unpad(cipher.decrypt(enc)).decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf9 in position 1: invalid start byte
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 413, in excuteICICI
+    query = auth.AESCipher(authKey, authIV).decrypt(
+  File "E:\sabpaisa\Sabpaisa-Payout\sabpaisa\auth.py", line 28, in decrypt
+    return self._unpad(cipher.decrypt(enc)).decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf9 in position 1: invalid start byte
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 413, in excuteICICI
+    query = auth.AESCipher(authKey, authIV).decrypt(
+  File "E:\sabpaisa\Sabpaisa-Payout\sabpaisa\auth.py", line 28, in decrypt
+    return self._unpad(cipher.decrypt(enc)).decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf9 in position 1: invalid start byte
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 413, in excuteICICI
+    query = auth.AESCipher(authKey, authIV).decrypt(
+  File "E:\sabpaisa\Sabpaisa-Payout\sabpaisa\auth.py", line 28, in decrypt
+    return self._unpad(cipher.decrypt(enc)).decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf9 in position 1: invalid start byte
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 438, in excuteICICI
+    bene = Beneficiary_model_services.Beneficiary_Model_Services.fetch_by_upiId(
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Beneficiary_model_services.py", line 37, in fetch_by_upiId
+    beneficiarymodel = BeneficiaryModel.objects.get(merchant_id=merchant_id, upi_id=upi_id, status=True)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.DoesNotExist(
+apis.database_models.BeneficiaryModel.BeneficiaryModel.DoesNotExist: BeneficiaryModel matching query does not exist.
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 438, in excuteICICI
+    bene = Beneficiary_model_services.Beneficiary_Model_Services.fetch_by_upiId(
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Beneficiary_model_services.py", line 37, in fetch_by_upiId
+    beneficiarymodel = BeneficiaryModel.objects.get(merchant_id=merchant_id, upi_id=upi_id, status=True)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.DoesNotExist(
+apis.database_models.BeneficiaryModel.BeneficiaryModel.DoesNotExist: BeneficiaryModel matching query does not exist.
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 438, in excuteICICI
+    bene = Beneficiary_model_services.Beneficiary_Model_Services.fetch_by_upiId(
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Beneficiary_model_services.py", line 37, in fetch_by_upiId
+    beneficiarymodel = BeneficiaryModel.objects.get(merchant_id=merchant_id, upi_id=upi_id, status=True)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.DoesNotExist(
+apis.database_models.BeneficiaryModel.BeneficiaryModel.DoesNotExist: BeneficiaryModel matching query does not exist.
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 438, in excuteICICI
+    bene = Beneficiary_model_services.Beneficiary_Model_Services.fetch_by_upiId(
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Beneficiary_model_services.py", line 37, in fetch_by_upiId
+    beneficiarymodel = BeneficiaryModel.objects.get(merchant_id=merchant_id, upi_id=upi_id, status=True)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.DoesNotExist(
+apis.database_models.BeneficiaryModel.BeneficiaryModel.DoesNotExist: BeneficiaryModel matching query does not exist.
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 421, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 220, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 421, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 220, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 220, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 220, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 220, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 220, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 419, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 220, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 419, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 220, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 419, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 419, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 419, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 419, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 419, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 419, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 202, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 206, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 206, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 207, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 207, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 207, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 420, in excuteICICI
+    upi_validation_response = icici_payment_service.validate_upi_request(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 207, in validate_upi_request
+    upi_id_validation_response = utils.validate_upi_id(upi_request_data.get("upi_id"))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 221, in validate_upi_id
+    if "@" not in upi_id:
+TypeError: argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 441, in excuteICICI
+    bene = Beneficiary_model_services.Beneficiary_Model_Services.fetch_by_upiId(
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Beneficiary_model_services.py", line 37, in fetch_by_upiId
+    beneficiarymodel = BeneficiaryModel.objects.get(merchant_id=merchant_id, upi_id=upi_id, status=True)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.DoesNotExist(
+apis.database_models.BeneficiaryModel.BeneficiaryModel.DoesNotExist: BeneficiaryModel matching query does not exist.
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 441, in excuteICICI
+    bene = Beneficiary_model_services.Beneficiary_Model_Services.fetch_by_upiId(
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Beneficiary_model_services.py", line 37, in fetch_by_upiId
+    beneficiarymodel = BeneficiaryModel.objects.get(merchant_id=merchant_id, upi_id=upi_id, status=True)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.DoesNotExist(
+apis.database_models.BeneficiaryModel.BeneficiaryModel.DoesNotExist: BeneficiaryModel matching query does not exist.
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 441, in excuteICICI
+    bene = Beneficiary_model_services.Beneficiary_Model_Services.fetch_by_upiId(
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Beneficiary_model_services.py", line 37, in fetch_by_upiId
+    beneficiarymodel = BeneficiaryModel.objects.get(merchant_id=merchant_id, upi_id=upi_id, status=True)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.DoesNotExist(
+apis.database_models.BeneficiaryModel.BeneficiaryModel.DoesNotExist: BeneficiaryModel matching query does not exist.
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 441, in excuteICICI
+    bene = Beneficiary_model_services.Beneficiary_Model_Services.fetch_by_upiId(
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Beneficiary_model_services.py", line 37, in fetch_by_upiId
+    beneficiarymodel = BeneficiaryModel.objects.get(merchant_id=merchant_id, upi_id=upi_id, status=True)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.DoesNotExist(
+apis.database_models.BeneficiaryModel.BeneficiaryModel.DoesNotExist: BeneficiaryModel matching query does not exist.
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 533, in excuteICICI
+    iciciPaymentRequestModel = icici_payment_service.createIciciUpiRequestModel(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 29, in createIciciUpiRequestModel
+    icici_bene = ICICI_Beneficiary.objects.get(payout_beneficiary_id=beneficiary.id)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.DoesNotExist(
+apis.database_models.IciciBeneficiaryModel.ICICI_Beneficiary.DoesNotExist: ICICI_Beneficiary matching query does not exist.
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 533, in excuteICICI
+    iciciPaymentRequestModel = icici_payment_service.createIciciUpiRequestModel(map)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 29, in createIciciUpiRequestModel
+    icici_bene = ICICI_Beneficiary.objects.get(payout_beneficiary_id=beneficiary.id)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.DoesNotExist(
+apis.database_models.IciciBeneficiaryModel.ICICI_Beneficiary.DoesNotExist: ICICI_Beneficiary matching query does not exist.
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\INDIA\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1253, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\INDIA\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1299, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\INDIA\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1248, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\INDIA\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1008, in _send_output
+    self.send(msg)
+  File "C:\Users\INDIA\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 948, in send
+    self.connect()
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001F6E386D550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: /encryptData (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F6E386D550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 536, in excuteICICI
+    response = icici_payment_service.processIciciPayment(iciciPaymentRequestModel.get("data"), header)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 60, in processIciciPayment
+    json_request_model = utils.create_icici_composite_request(json_request_modoel)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 158, in create_icici_composite_request
+    request_data = composite_data_encrypt(json.dumps(qs, default=str))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 96, in composite_data_encrypt
+    res = requests.post('http://localhost:8081/encryptData',
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\api.py", line 117, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: /encryptData (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F6E386D550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\INDIA\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1253, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\INDIA\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1299, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\INDIA\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1248, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\INDIA\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1008, in _send_output
+    self.send(msg)
+  File "C:\Users\INDIA\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 948, in send
+    self.connect()
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001F6E386D550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: /encryptData (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F6E386D550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 536, in excuteICICI
+    response = icici_payment_service.processIciciPayment(iciciPaymentRequestModel.get("data"), header)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\paymentService.py", line 60, in processIciciPayment
+    json_request_model = utils.create_icici_composite_request(json_request_modoel)
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 158, in create_icici_composite_request
+    request_data = composite_data_encrypt(json.dumps(qs, default=str))
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\bank_services\ICICI_service\utils.py", line 96, in composite_data_encrypt
+    res = requests.post('http://localhost:8081/encryptData',
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\api.py", line 117, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: /encryptData (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F6E386D550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'remarks' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 587, in excuteICICI
+    ledgerModelService.update_upi_icici_status(id, "Proccesing", self.client_ip_address,
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Ledger_model_services.py", line 299, in update_upi_icici_status
+    ledgerModel.save()
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 743, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 780, in save_base
+    updated = self._save_table(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 862, in _save_table
+    updated = self._do_update(base_qs, using, pk_val, values, update_fields,
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 916, in _do_update
+    return filtered._update(values) > 0
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 809, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\sql\compiler.py", line 1591, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\sql\compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'remarks' cannot be null")
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'remarks' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 587, in excuteICICI
+    ledgerModelService.update_upi_icici_status(id, "Proccesing", self.client_ip_address,
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Ledger_model_services.py", line 299, in update_upi_icici_status
+    ledgerModel.save()
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 743, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 780, in save_base
+    updated = self._save_table(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 862, in _save_table
+    updated = self._do_update(base_qs, using, pk_val, values, update_fields,
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 916, in _do_update
+    return filtered._update(values) > 0
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 809, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\sql\compiler.py", line 1591, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\sql\compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'remarks' cannot be null")
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'remarks' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 587, in excuteICICI
+    ledgerModelService.update_upi_icici_status(id, "Proccesing", self.client_ip_address,
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Ledger_model_services.py", line 299, in update_upi_icici_status
+    ledgerModel.save()
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 743, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 780, in save_base
+    updated = self._save_table(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 862, in _save_table
+    updated = self._do_update(base_qs, using, pk_val, values, update_fields,
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 916, in _do_update
+    return filtered._update(values) > 0
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 809, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\sql\compiler.py", line 1591, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\sql\compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'remarks' cannot be null")
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'remarks' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\other_service\payout_service.py", line 587, in excuteICICI
+    ledgerModelService.update_upi_icici_status(id, "Proccesing", self.client_ip_address,
+  File "E:\sabpaisa\Sabpaisa-Payout\apis\database_service\Ledger_model_services.py", line 299, in update_upi_icici_status
+    ledgerModel.save()
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 743, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 780, in save_base
+    updated = self._save_table(
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 862, in _save_table
+    updated = self._do_update(base_qs, using, pk_val, values, update_fields,
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\base.py", line 916, in _do_update
+    return filtered._update(values) > 0
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\query.py", line 809, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\sql\compiler.py", line 1591, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\models\sql\compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "E:\sabpaisa\Sabpaisa-Payout\env\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'remarks' cannot be null")

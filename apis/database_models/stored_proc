@@ -1,0 +1,235 @@
+#get balance
+DELIMITER &&
+create PROCEDURE getBalance(in merchant_id int,out balance float,out cred1 float,out deb1 float)
+begin
+
+-- select sum(amount) into cred1 from apis_transactionhistorymodel where trans_amount_type="credited" and merchant_id=merchant_id and trans_status in ("Success","Pending","Requested","Proccesing");
+-- select sum(amount) into deb1 from apis_transactionhistorymodel where trans_amount_type="debited" and merchant_id=merchant_id and trans_status in ("Success","Pending","Requested","Proccesing");
+
+Call getAmount("cr",merchant_id,@cred);
+Call getAmount("dr",merchant_id,@deb);
+
+if (isnull(@cred)) then
+set cred1=0;
+
+else
+set cred1 = @cred;
+end if;
+if (isnull(@deb)) then
+set deb1=0;
+
+else
+set deb1 = @deb;
+end if;
+
+select cred1-deb1 into balance;
+
+end 
+&& DELIMITER ;
+#get amount
+DELIMITER &&
+create PROCEDURE getAmount(in type1 varchar(20),in merchant_id int,out value1 float)
+begin
+select sum(total_amount) into value1 from apis_transactionhistorymodel where trans_amount_type=type1 and apis_transactionhistorymodel.merchant_id=merchant_id and trans_status in ("Success","Pending","Requested","Proccesing");
+
+end 
+&& DELIMITER ;
+--DELIMITER $$
+--CREATE DEFINER=`root`@`localhost` PROCEDURE `fet`(IN n varchar(1000), m int(11))
+--BEGIN
+--select * from apis_transactionhistorymodel where (customer_ref_no = n OR trans_amount_type = n OR client_code = n) AND (merchant = m) ;
+--END$$
+--DELIMITER ;
+#get role
+DELIMITER &&
+create PROCEDURE getRoleType(in merchant_id int)
+begin
+select apis_rolemodel.role_name from apis_merchantmodel  inner join apis_rolemodel on apis_merchantmodel.role_id=apis_rolemodel.id where apis_merchantmodel.id=merchant_id;
+end 
+#get ledger
+DELIMITER &&
+create PROCEDURE getLedger(in length int,in page int)
+begin
+
+-- DECLARE  balance int;
+-- DECLARE  merchants int;
+-- DECLARE  totaltrans int;
+declare endpage int;
+declare page_val int;
+
+-- select (page*length) into endpage;
+select (page-1)*length into page_val;
+create view tempcredview as select sum(total_amount) as amount,count(*) as totaltrans,merchant_id as merchant  from apis_transactionhistorymodel where trans_amount_type="cr" and trans_status in ("Success","Pending","Requested","Proccesing") group by merchant;
+create view tempdebview as select sum(total_amount) as amount,count(*) as totaltrans,merchant_id as merchant  from apis_transactionhistorymodel where trans_amount_type="dr" and trans_status in ("Success","Pending","Requested","Proccesing") group by merchant;
+
+create view tempview as select tempcredview.amount-ifnull(tempdebview.amount,0) as balance, tempcredview.totaltrans+ifnull(tempdebview.totaltrans,0) as totaltrans,tempcredview.merchant from tempcredview left join tempdebview on tempcredview.merchant=tempdebview.merchant;
+select apis_merchantmodel.client_username,tempview.balance,tempview.totaltrans,apis_merchantmodel.id from tempview inner join apis_merchantmodel on tempview.merchant=apis_merchantmodel.id where apis_merchantmodel.status=true limit page_val,length;
+drop view tempcredview;
+drop view tempdebview;
+drop view tempview;
+-- select endpage;
+end 
+&& DELIMITER ;
+
+# fetch merchant
+--CREATE DEFINER=`root`@`localhost` PROCEDURE `fetchMerchants`(in length int, in page int)
+--begin
+--select * from apis_merchantmodel where status =true limit length offset page;
+--end
+# get daily balance
+DELIMITER &&
+create PROCEDURE getDailyBalance()
+begin
+declare merchant_length int;
+declare looping int;
+declare charge_amount float;
+declare merchant int;
+declare temp_check int;
+declare temp_check2 int;
+set merchant_length=0;
+set looping=0;
+select count(*) into merchant_length from apis_merchantmodel;
+loop1: LOOP
+if looping>=merchant_length then 
+leave loop1;
+end if;
+set merchant=0;
+select id into merchant from apis_merchantmodel limit looping,1;
+call getBalance(merchant,@balance,@cred,@deb);
+set temp_check=0;
+select count(*) into temp_check from apis_dailyledgermodel where merchant_id=merchant;
+select count(*) into temp_check2 from apis_dailyledgermodel where merchant_id=merchant and date=CURDATE();
+if temp_check2=0 then
+if temp_check=0 then
+insert into apis_dailyledgermodel (merchant_id,date,opening_balance,closing_balance,created_at,created_by) values (merchant,DATE_SUB(CURDATE(), INTERVAL 1 DAY),0,@balance,now(),"system");
+else
+select sum(charge_amount) into charge_amount from apis_chargebreakingmodel inner join apis_transactionhistorymodel on apis_chargebreakingmodel.transaction_id=apis_transactionhistorymodel.id where apis_transactionhistorymodel.trans_date=CURDATE() and merchant_id=merchant and apis_chargebreakingmodel.charge_type="bank charge";;
+update apis_dailyledgermodel set closing_balance=@balance,updated_at=now(),today_charges=charge_amount,closing_credit=@cred,closing_debit=@deb where date = DATE_SUB(CURDATE(), INTERVAL 1 DAY) and merchant_id=merchant;
+end if;
+insert into apis_dailyledgermodel (merchant_id,date,opening_balance,opening_credit,opening_debit,created_at,created_by) values (merchant,CURDATE(),@balance,@cred,@deb,now(),"system");
+end if;
+set @balance=0;
+
+set looping=looping+1;
+end LOOP loop1;
+end
+&& DELIMITER ;
+# event 
+create EVENT dailyledger on schedule every 1 day starts (time("00:05:00"))
+do
+call getDailyBalance();
+#get amount 2
+DELIMITER &&
+create PROCEDURE getAmount2(in type1 varchar(20),in merchant_id int,out value1 float)
+begin
+-- select type1;
+select sum(total_amount) into value1 from apis_transactionhistorymodel where trans_amount_type=type1 and trans_date=current_date() and apis_transactionhistorymodel.merchant_id=merchant_id and trans_status in ("Success","Pending","Requested","Proccesing");
+-- select value1;
+end 
+&& DELIMITER ;
+#get balance new
+DELIMITER &&
+create PROCEDURE getBalancenew(in merchant_id int,out balance float,out cred1 float,out deb1 float)
+begin
+declare bal_temp int;
+-- select sum(amount) into cred1 from apis_transactionhistorymodel where trans_amount_type="credited" and merchant_id=merchant_id and trans_status in ("Success","Pending","Requested","Proccesing");
+-- select sum(amount) into deb1 from apis_transactionhistorymodel where trans_amount_type="debited" and merchant_id=merchant_id and trans_status in ("Success","Pending","Requested","Proccesing");
+
+Call getAmount2("cr",merchant_id,@cred);
+Call getAmount2("dr",merchant_id,@deb);
+
+if (isnull(@cred)) then
+set cred1=0;
+
+else
+set cred1 = @cred;
+end if;
+if (isnull(@deb)) then
+set deb1=0;
+
+else
+set deb1 = @deb;
+end if;
+set bal_temp=0;
+select opening_balance into bal_temp from apis_dailyledgermodel where apis_dailyledgermodel.merchant_id=merchant_id and date=current_date() order by id desc limit 1;
+if (isnull(bal_temp)) then
+set bal_temp=0;
+end if;
+select cred1-deb1 into balance;
+set balance=balance+bal_temp;
+
+end 
+&& DELIMITER ;
+
+--for admin screen
+DELIMITER $$
+create PROCEDURE todayTransactingMerchant()
+BEGIN
+create view info as select merchant_id from apis_transactionhistorymodel where trans_date =  CURDATE() group by merchant_id;
+select count(*) from info;
+drop view info;
+END$$
+DELIMITER ;
+
+
+DELIMITER &&
+create PROCEDURE getLedger(in length int,in page int)
+begin
+
+-- DECLARE  balance int;
+-- DECLARE  merchants int;
+-- DECLARE  totaltrans int;
+declare endpage int;
+declare page_val int;
+
+-- select (page*length) into endpage;
+select (page-1)*length into page_val;
+create view tempcredview as select sum(total_amount) as amount,count(*) as totaltrans,merchant_id as merchant  from apis_transactionhistorymodel where trans_amount_type="cr" and trans_status in ("Success","Pending","Requested","Proccesing") group by merchant;
+create view tempdebview as select sum(total_amount) as amount,count(*) as totaltrans,merchant_id as merchant  from apis_transactionhistorymodel where trans_amount_type="dr" and trans_status in ("Success","Pending","Requested","Proccesing") group by merchant;
+
+create view tempview as select TRUNCATE(ifnull(tempcredview.amount,0)-ifnull(tempdebview.amount,0),2) as balance, ifnull(tempcredview.totaltrans,0)+ifnull(tempdebview.totaltrans,0) as totaltrans,tempcredview.merchant,TRUNCATE(ifnull(tempcredview.amount,0),2) as credited_amount,TRUNCATE(ifnull(tempdebview.amount,0),2) as debited_amount from tempcredview left join tempdebview on tempcredview.merchant=tempdebview.merchant;
+select apis_merchantmodel.client_username,apis_merchantmodel.client_name,tempview.balance,tempview.totaltrans,apis_merchantmodel.id,credited_amount,debited_amount from tempview inner join apis_merchantmodel on tempview.merchant=apis_merchantmodel.id where apis_merchantmodel.status=true limit page_val,length;
+drop view tempcredview;
+drop view tempdebview;
+drop view tempview;
+-- select endpage;
+end 
+&& DELIMITER ;
+
+#fetchBankPartnerInfo
+DELIMITER &&
+create procedure fetchBankPartnerInfo(in page int,in length int)
+begin
+select payout_trans_id,bank_name,mode,trans_type,charge_amount,tax_amount ,charge_amount+tax_amount as total_charge from apis_transactionhistorymodel a, apis_bankpartnermodel b, apis_modemodel c, apis_chargebreakingmodel d where d.transaction_id=a.id and  a.bank_partner_id=b.id and a.payment_mode_id=c.id limit length offset page;
+end &&
+DELIMITER ;
+
+#Charge Break up info
+DELIMITER &&
+create PROCEDURE chargeBreakUpInfo()
+begin
+create view payinChargesBank as select payout_trans_id,charge_type,trans_type,charge_amount as bank_charge,tax_amount as bank_tax,charge_amount+tax_amount as bank_total_charge from apis_transactionhistorymodel a,apis_chargebreakingmodel b where b.payout_transaction_id=a.payout_trans_id and trans_type="payin" and charge_type="bank charge";
+create view payinChargesSP as select payout_trans_id,charge_type ,trans_type,charge_amount as sabpaisa_charge,tax_amount as sabpaisa_tax,charge_amount+tax_amount as sabpaisa_total_charge from apis_transactionhistorymodel a,apis_chargebreakingmodel b where b.payout_transaction_id=a.payout_trans_id and trans_type="payin" and charge_type="sp convinience charge";
+create view payoutChargesBank as select payout_trans_id,b.charge_type,trans_type,charge_amount as bank_charge,tax_amount as bank_tax,bank_name,mode,charge_amount+tax_amount as bank_total_charge from apis_transactionhistorymodel a,apis_chargebreakingmodel b,apis_chargemodel c,apis_bankpartnermodel d, apis_modemodel e where b.payout_transaction_id=a.payout_trans_id and trans_type="payout" and b.charge_type="charge"and b.charge_id=c.id and c.partner_id!=0 and c.partner_id=d.id and a.payment_mode_id=e.id;
+create view payoutChargesSp as select payout_trans_id,b.charge_type,trans_type,charge_amount as sabpaisa_charge,tax_amount as sabpaisa_tax,charge_amount+tax_amount as sabpaisa_total_charge from apis_transactionhistorymodel a,apis_chargebreakingmodel b,apis_chargemodel c where b.payout_transaction_id=a.payout_trans_id and trans_type="payout" and b.charge_type="charge"and b.charge_id=c.id and c.partner_id=0;
+
+
+create view chargeInfo as select payinChargesBank.payout_trans_id,payinChargesBank.trans_type,payinChargesBank.bank_charge,payinChargesBank.bank_tax,payinChargesBank.bank_total_charge,payinChargesSP.sabpaisa_charge,payinChargesSP.sabpaisa_tax,payinChargesSP.sabpaisa_total_charge from payinChargesBank left join payinChargesSP on payinChargesBank.payout_trans_id=payinChargesSP.payout_trans_id union select payinChargesBank.payout_trans_id,payinChargesBank.trans_type,payinChargesBank.bank_charge,payinChargesBank.bank_tax,payinChargesBank.bank_total_charge,payinChargesSP.sabpaisa_charge,payinChargesSP.sabpaisa_tax,payinChargesSP.sabpaisa_total_charge from payinChargesBank right join payinChargesSP on payinChargesBank.payout_trans_id=payinChargesSP.payout_trans_id union all select payoutChargesBank.payout_trans_id,payoutChargesBank.trans_type,payoutChargesBank.bank_charge,payoutChargesBank.bank_tax,payoutChargesBank.bank_total_charge,payoutChargesSp.sabpaisa_charge,payoutChargesSp.sabpaisa_tax,payoutChargesSp.sabpaisa_total_charge from payoutChargesBank left join payoutChargesSp on payoutChargesBank.payout_trans_id=payoutChargesSp.payout_trans_id union all select payoutChargesBank.payout_trans_id,payoutChargesBank.trans_type,payoutChargesBank.bank_charge,payoutChargesBank.bank_tax,payoutChargesBank.bank_total_charge,payoutChargesSp.sabpaisa_charge,payoutChargesSp.sabpaisa_tax,payoutChargesSp.sabpaisa_total_charge from payoutChargesBank right join payoutChargesSp on payoutChargesBank.payout_trans_id=payoutChargesSp.payout_trans_id;
+create view chargeInfoBankMode as select d.payout_trans_id,d.trans_type,trans_date as transaction_date,bank_charge,bank_tax,bank_total_charge,sabpaisa_charge,sabpaisa_tax,sabpaisa_total_charge,bank_name, mode from chargeInfo a,apis_bankpartnermodel b, apis_modemodel c, apis_transactionhistorymodel d where a.payout_trans_id=d.payout_trans_id and d.payment_mode_id=c.id and d.bank_partner_id = b.id and trans_status="success"; 
+
+end &&
+DELIMITER;
+
+#delete all view 
+DELIMITER &&
+create PROCEDURE deleteChargeBreakUpInfo()
+begin
+drop view payinChargesBank;
+drop view payinChargesSP;
+drop view payoutChargesBank;
+drop view payoutChargesSp;
+drop view chargeInfo;
+drop view chargeInfoBankMode;
+end &&
+DELIMITER;
+
